@@ -8,6 +8,10 @@
 
 (async() => {
     console.log(await window.exposed.getStuffFromMain())
-    
+
     await window.exposed.sendStuffToMain('Stuff from renderer')
 })()
+
+document.querySelector('#btn-test').addEventListener('click', async() => {
+    window.exposed.btnClick('Clicked btn')
+})
