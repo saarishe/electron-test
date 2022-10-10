@@ -11,7 +11,23 @@
 
     await window.exposed.sendStuffToMain('Stuff from renderer')
 })()
+ 
+getNotes = async() =>{
+console.log('getNotes')
+const notes =  await window.exposed.getNotes()
+console.log(notes)
+}
+getNotes()
 
-document.querySelector('#btn-test').addEventListener('click', async() => {
-    window.exposed.btnClick('Clicked btn')
+
+document.querySelector('#btn-test').addEventListener('click', async() =>{
+    document.querySelector('#msg').innerText = ' '
+    const login_fail = await window.electron.notesLogin({
+        email : document.querySelector('#email').value, 
+        password : document.querySelector('#psw').value
+    })
+    if(login_fail){
+        document.querySelector('#msg').innerText = login_fail.msg
+    }
+    getNotes()
 })

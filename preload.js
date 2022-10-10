@@ -11,6 +11,14 @@ contextBridge.exposeInMainWorld('exposed', {
         console.log('button clicked (preload)')
     },
 
+    getNotes: () => {
+        return ipcRenderer.invoke('get-notes')
+    },
+ 
+    notesLogin: (data) => {
+        ipcRenderer.invoke('notes-login', data)
+    },
+
     // expose a function in main (node) to renderer
     getStuffFromMain: () => ipcRenderer.invoke('get-stuff-from-main'),
 

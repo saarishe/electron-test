@@ -1,3 +1,9 @@
-/* styles.css */
-
-/* Add styles here to customize the appearance of your app */
+#logindiv{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    left: 50%;
+    top: 30%;
+    margin-left:-50px;
+}
