@@ -1,9 +1,70 @@
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Roboto:wght@100;300;700&display=swap');
 #logindiv{
+    height: 300px;
+    width: 300px;
+    border: solid 1px black ;
+    animation: fadeIn 3s;
+    margin: 0;
     position: absolute;
-    height: 100px;
-    width: 100px;
-    background-color: gray;
+    top: 50%;
     left: 50%;
-    top: 30%;
-    margin-left:-50px;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  #stugserviceH1{
+    font-family: 'Almarai', sans-serif;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  #valkommen{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  label{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    size: 8px;
+  }
+
+  .formInput{
+    margin: 10px 2px;
+  }
+
+  #btn-test{
+    border: none;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #ddeffd;
+    border-radius: 10px;
+  }
+
+  #btn-test:hover{
+    background-color: #bce0fc;
+  }
+
+  #btn-sign{
+    border: none;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    border: #ddeffd 0.1px solid;
+  }

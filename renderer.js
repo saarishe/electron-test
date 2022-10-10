@@ -12,12 +12,12 @@
     await window.exposed.sendStuffToMain('Stuff from renderer')
 })()
  
-getNotes = async() =>{
-console.log('getNotes')
-const notes =  await window.exposed.getNotes()
+getCabins = async() =>{
+console.log('getCabins')
+const notes =  await window.exposed.getCabins()
 console.log(notes)
 }
-getNotes()
+getCabins()
 
 
 document.querySelector('#btn-test').addEventListener('click', async() =>{
@@ -29,5 +29,5 @@ document.querySelector('#btn-test').addEventListener('click', async() =>{
     if(login_fail){
         document.querySelector('#msg').innerText = login_fail.msg
     }
-    getNotes()
+    getCabins()
 })

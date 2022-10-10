@@ -45,16 +45,16 @@ ipcMain.handle('btn-click', async () => {
 })
 
 //Get notes
-ipcMain.handle('get-notes', async () => {
-    console.log('get-notes (main)')
+ipcMain.handle('get-cabins', async () => {
+    console.log('get-cabins (main)')
     try {
         const resp = await fetch(API_URL + '/notes', { 
             headers: {'Authorization': 'Bearer ' + store.get('jwt')},
             timeout: 3000 
         })
-        const notes = await resp.json()
+        const cabin = await resp.json()
 
-        return notes
+        return cabin
     } catch (error) {
         console.log(error.message)
         return false

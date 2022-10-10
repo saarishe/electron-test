@@ -11,8 +11,8 @@ contextBridge.exposeInMainWorld('exposed', {
         console.log('button clicked (preload)')
     },
 
-    getNotes: () => {
-        return ipcRenderer.invoke('get-notes')
+    getCabins: () => {
+        return ipcRenderer.invoke('get-cabins')
     },
  
     notesLogin: (data) => {
