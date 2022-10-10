@@ -1,5 +1,6 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Roboto:wght@100;300;700&display=swap');
+
 /*#BEC3D6
 #6A6D7D
 #302D31
@@ -10,32 +11,35 @@
 #848799
 #7A4C35
 #CB884D*/
-body{
+body {
     margin: 0;
+    background-color: #eaecf09f;
+    animation: fadeIn 1.2s;
 }
 
-h1{
-    
-}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
-#upperHalf{
+#upperHalf {
     box-sizing: border-box;
 }
 
-#pic{
+#pic {
     background-color: #A1A6BA;
     height: 20vh;
     display: flex;
     justify-content: center;
     padding-top: 20vh;
-    background: url('/assets/cabin1.jpg') no-repeat 0,0 #c457a3b6;
+    background: url('/assets/cabin1.jpg') no-repeat 0, 0 #c457a3b6;
     filter: brightness(50%);
     background-size: 100%;
     background-position: center;
     background-size: cover;
 }
 
-#text{
+#text {
     font-family: 'Almarai', sans-serif;
     font-weight: 700;
     font-size: 2.5em;
@@ -50,40 +54,49 @@ h1{
     text-align: center;
 }
 
-h2{
+h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
-#lowerHalf{
+#lowerHalf {
     display: flex;
     justify-content: center;
 }
 
-#container-1{
+#container-1 {
     padding-right: 10%;
 }
 
-.cabin{
+.cabin {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    transition-duration: 0.4s;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cabin:hover{
+    background-color: #fdae69b7;
+}
+
+label {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1em;
 }
 
-label{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 1em;
-}
-
-input{
+input {
     margin: 10px 2px;
     border: none;
     border-bottom: 1px solid #848799;
 }
 
-#submit-btn{
+#submit-btn {
     border: none;
     padding: 8px 25px;
     text-align: center;
@@ -94,7 +107,7 @@ input{
     border-radius: 10px;
 }
 
-#submit-btn:hover{
+#submit-btn:hover {
     transition-duration: 0.4s;
     background-color: #e79955;
 }
@@ -104,5 +117,4 @@ img {
     width: 50vw;
     height: 100vh;
     object-fit: cover;
-  }
-  
+}
