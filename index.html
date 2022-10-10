@@ -10,20 +10,30 @@
 </head>
 
 <body>
-    <div id="logindiv">
-        <h1 id="stugserviceH1">Stugservice</h1>
-        <p id="valkommen"> Välkommen till Stugservice</p>
+    <div id="leftHalf">
+        <div id="logindiv">
+            <p id="valkommen">Välkommen tillbaka!</p>
+        <h1 id="stugserviceH1">Logga in på ditt konto</h1>
 
         <form id="loginform" action="">
-            <label for="">E-mail</label> </br>
+            <label for="email">E-mail</label> </br>
             <input type="text" id="email" class="formInput"></br>
             <label for="">Password</label></br>
             <input type="text" id="pws" class="formInput"></br>
             <div id="msg"></div>
         </form>
-        <button id="btn-test" type="button">Log in</button>
+        <button id="btn-test" type="button">Log in</button> <br>
         <button id="btn-sign" type="button">Sign up</button>
     </div>
+    </div>
+
+
+    
+    <div id="rightHalf">
+        <img src="/assets/cabin.jpg" alt="cabin">
+        <!--Photo-->
+    </div>
+    
 
     <!--Comment-->
     <script src="./renderer.js"></script>

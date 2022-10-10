@@ -1,16 +1,53 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Roboto:wght@100;300;700&display=swap');
+/*#BEC3D6
+#6A6D7D
+#302D31
+#1E1B1E
+#414048
+#A1A6BA
+#565863
+#848799
+#7A4C35
+#CB884D*/
+
+
+#leftHalf{
+  width: 50%;
+  position: absolute;
+  left: 0px;
+  height: 100%;
+  background-color: #f8faff81;
+  
+}
+
+#rightHalf {
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  height: 100%;
+}
+
+img {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
 #logindiv{
     height: 300px;
     width: 300px;
-    border: solid 1px black ;
-    animation: fadeIn 3s;
+    animation: fadeIn 2s;
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: left;
+    /*background: #bec3d6ce;*/
+    border-radius: 10px;
+
 }
 
 @keyframes fadeIn {
@@ -20,7 +57,8 @@
 
   #stugserviceH1{
     font-family: 'Almarai', sans-serif;
-    font-weight: 300;
+    font-weight: 700;
+    font-size: 2.5em;
     text-align: center;
   }
 
@@ -33,11 +71,16 @@
   label{
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    size: 8px;
+    color: #848799;
+    size: 5px;
+    text-align: left;
   }
 
   .formInput{
     margin: 10px 2px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #848799;
   }
 
   #btn-test{
@@ -48,12 +91,13 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: #ddeffd;
+    background-color: #bec3d6ce;
     border-radius: 10px;
+    width: 100%;
   }
 
   #btn-test:hover{
-    background-color: #bce0fc;
+    background-color: #e79955;
   }
 
   #btn-sign{
@@ -66,5 +110,10 @@
     cursor: pointer;
     background-color: white;
     border-radius: 10px;
-    border: #ddeffd 0.1px solid;
+    border: 3px solid #ddeffd ;
+    width: 100%;
+  }
+
+  #btn-sign:hover{
+    background-color:#ddeffd;
   }
