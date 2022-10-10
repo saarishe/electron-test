@@ -11,6 +11,9 @@
 #7A4C35
 #CB884D*/
 
+body{
+  margin: 0;
+}
 
 #leftHalf{
   width: 50%;
@@ -30,7 +33,7 @@
 
 img {
   display: block;
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
   object-fit: cover;
 }
@@ -38,7 +41,7 @@ img {
 #logindiv{
     height: 300px;
     width: 300px;
-    animation: fadeIn 2s;
+    animation: fadeIn 3s;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -85,7 +88,7 @@ img {
 
   #btn-test{
     border: none;
-    padding: 5px 25px;
+    padding: 8px 25px;
     text-align: center;
     text-decoration: none;
     margin: 4px 2px;

@@ -1,0 +1,108 @@
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Roboto:wght@100;300;700&display=swap');
+/*#BEC3D6
+#6A6D7D
+#302D31
+#1E1B1E
+#414048
+#A1A6BA
+#565863
+#848799
+#7A4C35
+#CB884D*/
+body{
+    margin: 0;
+}
+
+h1{
+    
+}
+
+#upperHalf{
+    box-sizing: border-box;
+}
+
+#pic{
+    background-color: #A1A6BA;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 20vh;
+    background: url('/assets/cabin1.jpg') no-repeat 0,0 #c457a3b6;
+    filter: brightness(50%);
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+#text{
+    font-family: 'Almarai', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+}
+
+#lowerHalf{
+    display: flex;
+    justify-content: center;
+}
+
+#container-1{
+    padding-right: 10%;
+}
+
+.cabin{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+input{
+    margin: 10px 2px;
+    border: none;
+    border-bottom: 1px solid #848799;
+}
+
+#submit-btn{
+    border: none;
+    padding: 8px 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #d0d6ecce;
+    border-radius: 10px;
+}
+
+#submit-btn:hover{
+    transition-duration: 0.4s;
+    background-color: #e79955;
+}
+
+img {
+    display: block;
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  

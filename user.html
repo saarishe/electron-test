@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="userstyle.css">
+
+    <title>Min sida</title>
+</head>
+
+<body>
+
+    <div id="upperHalf">
+        <div id="pic"></div>
+        <div id="text"><h1>Mina stugor</h1></div>
+    </div>
+    <div id="lowerHalf">
+        <div id="container-1">
+            <h2>Välj stuga</h2><br>
+            <div id="cabins">
+                <!--Listan på cabins från API-->
+                <!--Nu har jag bara en hittepå lista-->
+                <p class="cabin">Norragatan 1</p>
+                <p class="cabin">Solvillan 140</p>
+            </div>
+
+            <form action="">
+                <input type="checkbox" id="clean"> <label for="clean">Städning</label> <br>
+                <input type="checkbox" id="lawn"> <label for="lawn">Gräsklippning</label> <br>
+                <input type="checkbox" id="window"> <label for="window">Tvätta fönster</label> <br>
+                <label>Datum</label>
+                <input type="date">
+            </form>
+            <button id="submit-btn" type="button">Beställ</button>
+        </div>
+
+        <div id="container-2">
+            <h2>Beställda tjänster</h2><br>
+            <!--Lista på beställda tjänster frpn API-->
+            <!--Nu har jag bara en hittepå lista-->
+            <p class="service"></p>
+        </div>
+    </div>
+</body>
+
+</html>
