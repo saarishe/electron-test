@@ -1,0 +1,19 @@
+//@baseURL = http://localhost:3030
+@baseURL = https://firstappwom.azurewebsites.net
+@token = Bearer {{$dotenv TOKEN}}
+
+###
+GET {{baseURL}}/orders
+
+###
+
+POST {{baseURL}}/orders/addOrder
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "cabinid" : "633dce27c93e8534991be56e",
+    "date" :  "02-12-2022",
+    "service" : "städa" //borde får från services
+}
+

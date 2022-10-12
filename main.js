@@ -8,7 +8,7 @@ const { TIMEOUT } = require('dns')
 const { crash } = require('process')
 
 //ska egentligen vara i .env (egentligen vår url)
-const API_URL = "http://localhost:3030/"
+const API_URL = "https://firstappwom.azurewebsites.net"
 const store = new Store() //electron localstorage
 
 function createWindow() {
@@ -48,7 +48,7 @@ ipcMain.handle('btn-click', async () => {
 ipcMain.handle('get-cabins', async () => {
     console.log('get-cabins (main)')
     try {
-        const resp = await fetch(API_URL + '/notes', { 
+        const resp = await fetch(API_URL + '/cabins', { 
             headers: {'Authorization': 'Bearer ' + store.get('jwt')},
             timeout: 3000 
         })
@@ -87,5 +87,4 @@ ipcMain.handle('notes-login', async (event, body) => {
 
 app.on('window-all-closed', function () {
     app.quit()
-    // Check original template for MacOS stuff!
 })

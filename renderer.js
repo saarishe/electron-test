@@ -22,9 +22,9 @@ getCabins()
 
 document.querySelector('#btn-test').addEventListener('click', async() =>{
     document.querySelector('#msg').innerText = ' '
-    const login_fail = await window.electron.notesLogin({
+    const login_fail = await window.exposed.notesLogin({
         email : document.querySelector('#email').value, 
-        password : document.querySelector('#psw').value
+        password : document.querySelector('#pws').value
     })
     if(login_fail){
         document.querySelector('#msg').innerText = login_fail.msg

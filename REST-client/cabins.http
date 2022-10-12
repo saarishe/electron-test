@@ -1,0 +1,10 @@
+
+@baseURL = https://firstappwom.azurewebsites.net
+
+@token = Bearer {{$dotenv TOKEN}}
+
+###
+
+GET {{baseURL}}/cabins
+
+// sanna.larsson@gmail.fi, Lösen1234

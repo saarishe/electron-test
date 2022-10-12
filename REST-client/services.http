@@ -1,0 +1,20 @@
+//@baseURL = http://localhost:3030
+@baseURL = https://firstappwom.azurewebsites.net
+
+@token = Bearer {{$dotenv TOKEN}}
+
+###
+GET {{baseURL}}/services
+
+###
+
+POST {{baseURL}}/services/addService
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "cleaning" : false,
+    "mowing" :  true,
+    "sheets" : true
+}
+

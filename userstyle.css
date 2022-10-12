@@ -32,7 +32,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 20vh;
-    background: url('assets/cabin1.jpg') no-repeat 0, 0 #c457a3b6;
+    background: url('assets/cabin1.jpg') no-repeat 0, 0;
     filter: brightness(50%);
     background-size: 100%;
     background-position: center;
