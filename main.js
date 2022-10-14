@@ -92,6 +92,7 @@ ipcMain.handle('post-cabin', async () => {
         const resp = await fetch(API_URL + '/cabins')
         const cabins = await resp.json()
         return cabins
+        console.log(cabins)
     } catch (error) {
         console.log(error.message)
         return false
