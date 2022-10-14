@@ -85,6 +85,20 @@ ipcMain.handle('notes-login', async (event, body) => {
 })
 
 
+//Get notes
+ipcMain.handle('post-cabin', async () => {
+    console.log('post-cabin (main)')
+    try {
+        const resp = await fetch(API_URL + '/cabins')
+        const cabins = await resp.json()
+        return cabins
+    } catch (error) {
+        console.log(error.message)
+        return false
+    }
+})
+
+
 app.on('window-all-closed', function () {
     app.quit()
 })

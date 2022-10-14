@@ -31,3 +31,10 @@ document.querySelector('#btn-test').addEventListener('click', async() =>{
     }
     getCabins()
 })
+
+postCabin = async() =>{
+    console.log('postCabins')
+    const cabin = await window.exposed.postCabin()
+    console.log(cabin)
+}
+postCabin()
