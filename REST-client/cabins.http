@@ -1,5 +1,5 @@
 
-@baseURL = https://firstappwom.azurewebsites.net
+@baseURL = https://jellyfish-app-gpkr6.ondigitalocean.app/
 
 @token = Bearer {{$dotenv TOKEN}}
 
