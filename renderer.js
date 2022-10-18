@@ -13,28 +13,44 @@
 })()
  
 getCabins = async() =>{
-console.log('getCabins')
-const notes =  await window.exposed.getCabins()
-console.log(notes)
+    console.log('getCabins')
+    const cabins =  await window.exposed.getCabins()
+    console.log(cabins)
+
+    if (!cabins) {
+        document.querySelector('#logindiv').style.display = 'block'
+        return
+    }
+
+    let cabinsHTML = "No cabins to show..."
+    for (cabin in cabins) {
+        cabinsHTML += `
+            <div class="cabins">${cabin['adress']}</div>
+        `
+    }
+
+    document.querySelector('#cabin').innerHTML = cabinsHTML
 }
 getCabins()
 
 
 document.querySelector('#btn-test').addEventListener('click', async() =>{
-    document.querySelector('#msg').innerText = ' '
+    document.querySelector('#msg').innerText = ''
     const login_fail = await window.exposed.notesLogin({
         email : document.querySelector('#email').value, 
         password : document.querySelector('#pws').value
     })
-    if(login_fail){
+    if(!login_fail){
         document.querySelector('#msg').innerText = login_fail.msg
     }
-    getCabins()
+    document.querySelector('#cabin').innerHTML = getCabins()
+
+    document.querySelector('#logindiv').style.display = 'none'
 })
 
 postCabin = async() =>{
     console.log('postCabins')
-    const cabin = await window.exposed.postCabin()
-    console.log(cabin)
+    const cabinPost = await window.exposed.postCabin()
+    console.log(cabinPost)
 }
-postCabin()
+//postCabin()

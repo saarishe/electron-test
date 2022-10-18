@@ -1,5 +1,5 @@
 //@baseURL = http://localhost:3030
-@baseURL = https://firstappwom.azurewebsites.net
+@baseURL = https://jellyfish-app-gpkr6.ondigitalocean.app/
 
 @token = Bearer {{$dotenv TOKEN}}
 
@@ -10,19 +10,19 @@ GET {{baseURL}}/users
 
 ### Skapa ny användare, TODO: fixa: crashar //63356efd00d300e9a762e206
 
-POST {{baseURL}}/users/signup
+POST {{baseURL}}users/signup
 Content-Type: application/json 
 
 {
-    "firstName" : "Sandra",
-    "lastName": "Larsson",
-    "email": "sandra.larsson@gmail.fi",
-    "password": "Lösen1234"
+    "firstName" : "William",
+    "lastName": "Doe",
+    "email": "doe.man@gmail.fi",
+    "password": "1234"
 }
 
 ### Logga in
 
-POST {{baseURL}}/users/login
+POST {{baseURL}}users/login
 Content-Type: application/json 
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 }
 
 ### Ändra sin användare
-PATCH  {{baseURL}}/users/edit/63284e765262835493f4e3ab
+PATCH  {{baseURL}}users/edit/63284e765262835493f4e3ab
 Authorization: {{token}}
 Content-Type: application/json
 
@@ -42,5 +42,5 @@ Content-Type: application/json
 
 ### Ta bort sin användare
 
-DELETE {{baseURL}}/users/delete/63284e765262835493f4e3ab
+DELETE {{baseURL}}users/delete/63284e765262835493f4e3ab
 Authorization: {{token}}
