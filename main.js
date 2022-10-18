@@ -11,11 +11,13 @@ const { crash } = require('process')
 const API_URL = "https://jellyfish-app-gpkr6.ondigitalocean.app"
 const store = new Store() //electron localstorage
 
+store.set('jwt', null)
+
 function createWindow() {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1800,
+        height: 1600,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         },
@@ -53,6 +55,9 @@ ipcMain.handle('get-cabins', async () => {
             timeout: 3000 
         })
         const cabin = await resp.json()
+        if(resp.status > 201) {
+            return false
+        }
 
         return cabin
     } catch (error) {
@@ -62,7 +67,7 @@ ipcMain.handle('get-cabins', async () => {
 })
 
 //Log in
-ipcMain.handle('notes-login', async (event, body) => {
+ipcMain.handle('notes-login', async (event, data) => {
     console.log('notes-login (main)')
     try {
         const resp = await fetch(API_URL + '/users/login', { 
@@ -72,15 +77,16 @@ ipcMain.handle('notes-login', async (event, body) => {
             timeout: 3000 
         })
         const user = await resp.json()
+
         if(resp.status > 201) return false
 
         console.log(user)
         store.set('jwt', user.token) //store token 
-        return false //log in succeeded
+        return true //log in succeeded
 
     } catch (error) {
         console.log(error.message)
-        return {'msg' : "Log in failed"}
+        return {'msg' : "Login failed"}
     }
 })
 
