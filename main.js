@@ -8,7 +8,7 @@ const { TIMEOUT } = require('dns')
 const { crash } = require('process')
 
 //ska egentligen vara i .env (egentligen vår url)
-const API_URL = "https://firstappwom.azurewebsites.net"
+const API_URL = "https://jellyfish-app-gpkr6.ondigitalocean.app"
 const store = new Store() //electron localstorage
 
 function createWindow() {
