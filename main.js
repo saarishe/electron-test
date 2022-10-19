@@ -67,15 +67,12 @@ ipcMain.handle('app-login', async (event, data) => {
             timeout: 3000 
         })
         const user = await resp.json()
-        console.log(user)
+        //console.log(user)
 
-        if(resp.status > 201) {
-            //console.log("Login failed.")
-            return user
-        }
+        if(resp.status > 201) return user
 
         store.set('jwt', user.token) //store token 
-        return false //log in succeeded
+        return false //login succeeded
 
     } catch (error) {
         console.log(error.message)

@@ -7,9 +7,8 @@
  */
  
 getCabins = async() =>{
-    console.log('getCabins')
     const cabins =  await window.exposed.getCabins()
-    console.log(cabins)
+    //console.log(cabins)
 
     if (!cabins) {
         document.querySelector('#logindiv').style.display = 'block'
@@ -20,10 +19,13 @@ getCabins = async() =>{
     for (const cabin of cabins) {
         cabinsHTML += `
             <div class="cabin"> <p style="font-size: 1.5em;"> Stuga: ${cabin['adress']} </p> Sorlek: ${cabin['size']}m2 <br> Pris: ${cabin['price']}€</div>
-            <input type="button" id="boka" class="cabin-btn" value="Boka">
+            <input type="button" id="${cabin['_id']}" class="cabin-btn" value="Boka">
         `
     }
-
+    /*cabinsHTML += `
+    <div class="cabin"></div>
+    <input type="button" id="cabin-create" class="cabin-btn" value="Lägg till ny stuga">
+    `*/
     document.querySelector('#cabin').innerHTML = cabinsHTML
 }
 //getCabins()
@@ -31,21 +33,23 @@ getCabins = async() =>{
 
 document.querySelector('#btn-test').addEventListener('click', async() =>{
     document.querySelector('#failmsg').innerText = ''
-    const login = await window.exposed.appLogin({
+    const login_failed = await window.exposed.appLogin({
         email : document.querySelector('#email').value, 
         password : document.querySelector('#pws').value
     })
-    if(login){
-        document.querySelector('#failmsg').innerText = 'Something went wrong'
-        return
-    } else {
-        document.querySelector('#logindiv').style.display = 'none'
-        getCabins()
-    }
-})
-/*
-document.querySelector('#cabin-btn').addEventListener('click', booking())
 
+    if(login_failed){
+        console.log("Something went wrong")
+        document.querySelector('#failmsg').innerText = login_failed.msg
+        return
+    }
+    
+    document.querySelector('#logindiv').style.display = 'none'
+    console.log("getCabins")
+    getCabins()
+})
+
+/*document.querySelectorAll('.cabin-btn').addEventListener('click', booking())
 
 function booking(){
     let bookingHTML = `<h2>Välj tjänst</h2>
