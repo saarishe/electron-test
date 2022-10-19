@@ -59,6 +59,11 @@ img {
     100% { opacity: 1; }
   }
 
+  .cabin{
+    animation: fadeIn 3s;
+    border-radius: 10px;
+  }
+
   #stugserviceH1{
     font-family: 'Almarai', sans-serif;
     font-weight: 700;

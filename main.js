@@ -12,8 +12,8 @@ const API_URL = "https://jellyfish-app-gpkr6.ondigitalocean.app"
 const store = new Store() //electron localstorage
 
 //store.set('jwt', null)
-//email: sanna.boman@gmail.fi
-//password": Lösen1234"
+//email: doe.man@gmail.fi
+//password": 1234
 
 function createWindow() {
     // Create the browser window.
@@ -39,10 +39,6 @@ app.whenReady().then(() => {
     createWindow()
 })
 
-// Example functions for communication between main and renderer (backend/frontend)
-ipcMain.handle('get-stuff-from-main', () => 'Stuff from main!')
-ipcMain.handle('send-stuff-to-main', async (event, data) => console.log(data))
-
 //click handler
 ipcMain.handle('btn-click', async () => {
     console.log('button clicked recieved in main')
@@ -57,11 +53,8 @@ ipcMain.handle('get-cabins', async () => {
             timeout: 3000 
         })
         const cabin = await resp.json()
-        if(resp.status > 201) {
-            return false
-        }
-
         return cabin
+        
     } catch (error) {
         console.log(error.message)
         return false
@@ -79,34 +72,19 @@ ipcMain.handle('app-login', async (event, data) => {
             timeout: 3000 
         })
         const user = await resp.json()
+        console.log(user)
 
         if(resp.status > 201) {
-            console.log("Login failed.")
-            return false
+            //console.log("Login failed.")
+            return user
         }
 
-        console.log(user)
         store.set('jwt', user.token) //store token 
-        return true //log in succeeded
+        return false //log in succeeded
 
     } catch (error) {
         console.log(error.message)
-        return {'msg' : "Login failed"}
-    }
-})
-
-
-//Get notes
-ipcMain.handle('post-cabin', async () => {
-    console.log('post-cabin (main)')
-    try {
-        const resp = await fetch(API_URL + '/cabins')
-        const cabins = await resp.json()
-        return cabins
-        console.log(cabins)
-    } catch (error) {
-        console.log(error.message)
-        return false
+        //return {'msg' : "Login failed"}
     }
 })
 

@@ -5,12 +5,6 @@
  * `contextIsolation` is turned on. Use the contextBridge API in `preload.js`
  * to expose Node.js functionality from the main process.
  */
-
-(async() => {
-    console.log(await window.exposed.getStuffFromMain())
-
-    await window.exposed.sendStuffToMain('Stuff from renderer')
-})()
  
 getCabins = async() =>{
     console.log('getCabins')
@@ -40,17 +34,11 @@ document.querySelector('#btn-test').addEventListener('click', async() =>{
         email : document.querySelector('#email').value, 
         password : document.querySelector('#pws').value
     })
-    if(login == true){
+    if(login){
+        document.querySelector('#msg').innerText = 'Something went wrong'
+        return
+    } else {
         document.querySelector('#logindiv').style.display = 'none'
         getCabins()
-    } else {
-        document.querySelector('#msg').innerText = "Something went wrong."
     }
 })
-
-postCabin = async() =>{
-    console.log('postCabins')
-    const cabinPost = await window.exposed.postCabin()
-    console.log(cabinPost)
-}
-//postCabin()
