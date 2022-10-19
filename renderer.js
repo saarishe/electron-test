@@ -29,13 +29,13 @@ getCabins = async() =>{
 
 
 document.querySelector('#btn-test').addEventListener('click', async() =>{
-    document.querySelector('#msg').innerText = ''
+    document.querySelector('#failmsg').innerText = ''
     const login = await window.exposed.appLogin({
         email : document.querySelector('#email').value, 
         password : document.querySelector('#pws').value
     })
     if(login){
-        document.querySelector('#msg').innerText = 'Something went wrong'
+        document.querySelector('#failmsg').innerText = 'Something went wrong'
         return
     } else {
         document.querySelector('#logindiv').style.display = 'none'

@@ -6,11 +6,6 @@ const { contextBridge, ipcRenderer } = require('electron')
 
 contextBridge.exposeInMainWorld('exposed', {
 
-    btnClick: () => {
-        ipcRenderer.invoke('btn-click')
-        console.log('button clicked (preload)')
-    },
-
     getCabins: () => {
         return ipcRenderer.invoke('get-cabins')
     },

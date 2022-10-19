@@ -39,11 +39,6 @@ app.whenReady().then(() => {
     createWindow()
 })
 
-//click handler
-ipcMain.handle('btn-click', async () => {
-    console.log('button clicked recieved in main')
-})
-
 //Get notes
 ipcMain.handle('get-cabins', async () => {
     console.log('get-cabins (main)')
@@ -54,7 +49,7 @@ ipcMain.handle('get-cabins', async () => {
         })
         const cabin = await resp.json()
         return cabin
-        
+
     } catch (error) {
         console.log(error.message)
         return false
