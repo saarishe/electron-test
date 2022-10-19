@@ -25,7 +25,7 @@ getCabins = async() =>{
     let cabinsHTML = ""
     for (const cabin of cabins) {
         cabinsHTML += `
-            <div class="cabins">${cabin['adress']}</div>
+            <div class="cabin">${cabin['adress']}</div>
         `
     }
 

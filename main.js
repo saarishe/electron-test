@@ -84,7 +84,7 @@ ipcMain.handle('notes-login', async (event, data) => {
 
         console.log(user)
         store.set('jwt', user.token) //store token 
-        return true //log in succeeded
+        return false //log in succeeded
 
     } catch (error) {
         console.log(error.message)
