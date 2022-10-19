@@ -11,7 +11,9 @@ const { crash } = require('process')
 const API_URL = "https://jellyfish-app-gpkr6.ondigitalocean.app"
 const store = new Store() //electron localstorage
 
-store.set('jwt', null)
+//store.set('jwt', null)
+//email: sanna.boman@gmail.fi
+//password": Lösen1234"
 
 function createWindow() {
     // Create the browser window.

@@ -22,8 +22,8 @@ getCabins = async() =>{
         return
     }
 
-    let cabinsHTML = "No cabins to show..."
-    for (cabin in cabins) {
+    let cabinsHTML = ""
+    for (const cabin of cabins) {
         cabinsHTML += `
             <div class="cabins">${cabin['adress']}</div>
         `
@@ -40,12 +40,12 @@ document.querySelector('#btn-test').addEventListener('click', async() =>{
         email : document.querySelector('#email').value, 
         password : document.querySelector('#pws').value
     })
-    if(!login_fail){
+    if(login_fail){
         document.querySelector('#msg').innerText = login_fail.msg
+        return
     }
-    document.querySelector('#cabin').innerHTML = getCabins()
-
     document.querySelector('#logindiv').style.display = 'none'
+    getCabins()
 })
 
 postCabin = async() =>{
