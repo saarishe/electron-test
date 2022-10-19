@@ -19,7 +19,8 @@ getCabins = async() =>{
     let cabinsHTML = ""
     for (const cabin of cabins) {
         cabinsHTML += `
-            <div class="cabin">${cabin['adress']}</div>
+            <div class="cabin"> <p style="font-size: 1.5em;"> Stuga: ${cabin['adress']} </p> Sorlek: ${cabin['size']}m2 <br> Pris: ${cabin['price']}€</div>
+            <input type="button" id="boka" class="cabin-btn" value="Boka">
         `
     }
 

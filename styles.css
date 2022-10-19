@@ -60,9 +60,28 @@ img {
   }
 
   .cabin{
-    animation: fadeIn 3s;
+    animation: fadeIn 1s;
     border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    padding-top: 30px;
+    padding-bottom: 5px;
   }
+
+#cabin{
+  height: 300px;
+  width: 300px;
+  animation: fadeIn 3s;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  /*background: #bec3d6ce;*/
+  border-radius: 10px;
+}
 
   #stugserviceH1{
     font-family: 'Almarai', sans-serif;
@@ -126,3 +145,19 @@ img {
   #btn-sign:hover{
     background-color:#ddeffd;
   }
+
+  .cabin-btn {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    transition-duration: 0.4s;
+    border-radius: 10px;
+    border: none;
+    padding: 5px 25px;
+    margin-bottom: 0;
+    background-color: #eaecf09f;
+}
+
+.cabin-btn:hover{
+    background-color: #fdae69b7;
+}
