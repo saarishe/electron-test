@@ -31,21 +31,21 @@ getCabins = async() =>{
 
     document.querySelector('#cabin').innerHTML = cabinsHTML
 }
-getCabins()
+//getCabins()
 
 
 document.querySelector('#btn-test').addEventListener('click', async() =>{
     document.querySelector('#msg').innerText = ''
-    const login_fail = await window.exposed.notesLogin({
+    const login = await window.exposed.appLogin({
         email : document.querySelector('#email').value, 
         password : document.querySelector('#pws').value
     })
-    if(login_fail){
-        document.querySelector('#msg').innerText = login_fail.msg
-        return
+    if(login == true){
+        document.querySelector('#logindiv').style.display = 'none'
+        getCabins()
+    } else {
+        document.querySelector('#msg').innerText = "Something went wrong."
     }
-    document.querySelector('#logindiv').style.display = 'none'
-    getCabins()
 })
 
 postCabin = async() =>{

@@ -69,8 +69,8 @@ ipcMain.handle('get-cabins', async () => {
 })
 
 //Log in
-ipcMain.handle('notes-login', async (event, data) => {
-    console.log('notes-login (main)')
+ipcMain.handle('app-login', async (event, data) => {
+    console.log('app-login (main)')
     try {
         const resp = await fetch(API_URL + '/users/login', { 
             method: 'POST',
@@ -80,11 +80,14 @@ ipcMain.handle('notes-login', async (event, data) => {
         })
         const user = await resp.json()
 
-        if(resp.status > 201) return false
+        if(resp.status > 201) {
+            console.log("Login failed.")
+            return false
+        }
 
         console.log(user)
         store.set('jwt', user.token) //store token 
-        return false //log in succeeded
+        return true //log in succeeded
 
     } catch (error) {
         console.log(error.message)

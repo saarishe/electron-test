@@ -15,8 +15,8 @@ contextBridge.exposeInMainWorld('exposed', {
         return ipcRenderer.invoke('get-cabins')
     },
  
-    notesLogin: (data) => {
-        ipcRenderer.invoke('notes-login', data)
+    appLogin: (data) => {
+        ipcRenderer.invoke('app-login', data)
     },
 
     postCabin: () => {
