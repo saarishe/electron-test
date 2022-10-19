@@ -43,3 +43,20 @@ document.querySelector('#btn-test').addEventListener('click', async() =>{
         getCabins()
     }
 })
+/*
+document.querySelector('#cabin-btn').addEventListener('click', booking())
+
+
+function booking(){
+    let bookingHTML = `<h2>Välj tjänst</h2>
+    <form action="">
+        <input type="checkbox" id="clean"> <label for="clean">Städning</label> <br>
+        <input type="checkbox" id="lawn"> <label for="lawn">Gräsklippning</label> <br>
+        <input type="checkbox" id="window"> <label for="window">Tvätta fönster</label> <br>
+        <label>Datum</label>
+        <input type="date">
+    </form>
+    <button id="submit-btn" type="button">Beställ</button>
+    `
+    document.querySelector('#cabin').innerHTML = bookingHTML
+}*/
